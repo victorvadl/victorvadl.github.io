@@ -27,7 +27,7 @@
 
   <p>This is a sample AMP page.</p>
 
-  <amp-analytics type="googleanalytics">
+  <amp-analytics type="googleanalytics" config="https://amp.analytics-debugger.com/ga4.json" data-credentials="include">
     <script type="application/json">
       {
         "vars": {
@@ -46,19 +46,7 @@
             "on": "visible",
             "request": "pageview"
           }
-        },
-        "extraUrlParams": {
-          "app_secret_proof": "YOUR_APP_SECRET_PROOF"
-        },
-        "extraUrlParamsReplaceMap": {
-          "amp": "gclid"
-        },
-        "transport": {
-          "beacon": false,
-          "xhrpost": false,
-          "image": true
-        },
-        "configPath": "/path/to/ga4.json"
+        }
       }
     </script>
   </amp-analytics>
