@@ -1,0 +1,67 @@
+<!doctype html>
+<html amp lang="en">
+<head>
+  <meta charset="utf-8">
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <title>AMP Page</title>
+  <link rel="canonical" href="self.html" />
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "NewsArticle",
+      "headline": "Article headline",
+      "datePublished": "2015-02-05T08:00:00+08:00",
+      "image": [
+        "thumbnail1.jpg",
+        "thumbnail2.jpg"
+      ]
+    }
+  </script>
+  <style amp-custom>
+    /* Add your custom styles here */
+  </style>
+</head>
+<body>
+  <h1>Welcome to my AMP Page</h1>
+
+  <p>This is a sample AMP page.</p>
+
+  <amp-analytics type="googleanalytics">
+    <script type="application/json">
+      {
+        "vars": {
+          "GA4_MEASUREMENT_ID": "G-THYNGSTER",
+          "GA4_ENDPOINT_HOSTNAME": "www.google-analytics.com",
+          "GOOGLE_CONSENT_ENABLED": false,
+          "WEBVITALS_TRACKING": false,
+          "PERFORMANCE_TIMING_TRACKING": false,
+          "DEFAULT_PAGEVIEW_ENABLED": true,
+          "SEND_DOUBLECLICK_BEACON": false,
+          "DISABLE_REGIONAL_DATA_COLLECTION": false,
+          "ENHANCED_MEASUREMENT_SCROLL": false
+        },
+        "triggers": {
+          "trackPageview": {
+            "on": "visible",
+            "request": "pageview"
+          }
+        },
+        "extraUrlParams": {
+          "app_secret_proof": "YOUR_APP_SECRET_PROOF"
+        },
+        "extraUrlParamsReplaceMap": {
+          "amp": "gclid"
+        },
+        "transport": {
+          "beacon": false,
+          "xhrpost": false,
+          "image": true
+        },
+        "configPath": "/path/to/ga4.json"
+      }
+    </script>
+  </amp-analytics>
+
+</body>
+</html>
