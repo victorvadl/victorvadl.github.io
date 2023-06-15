@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <title>AMP Page</title>
+  <title>GA4 AMP Unit Test Page</title>
   <link rel="canonical" href="self.html" />
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   <script type="application/ld+json">
@@ -23,30 +23,64 @@
   </style>
 </head>
 <body>
-  <h1>Welcome to my AMP Page</h1>
+  <h1>GA4 AMP Unit Test Page</h1>
 
-  <p>This is a sample AMP page.</p>
+  <h3>Configuration</h3>
+  <p>
+    &lt;amp-analytics type="googleanalytics" config="ga4.json" data-credentials="include"&gt;<br>
+    &nbsp;&nbsp;&lt;script type="application/json"&gt;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"vars": {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"GA4_MEASUREMENT_ID": "G-THYNGSTER"<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"extraUrlParams": {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"user__str_user_id": "123456",<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"user__int_lifetime_value": "147.34"<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"triggers": {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"demoClickEvent": {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"on": "click",<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"request": "ga4Event",<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selector": "#demoClick",<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"vars": {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ga4_event_name": "click_on_demo"<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"extraUrlParams": {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"event__str_click_type": "democlick",<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"event__int_click_count": "1"<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+    &nbsp;&nbsp;&lt;/script&gt;<br>
+    &lt;/amp-analytics&gt;
+  </p>
 
-  <amp-analytics type="googleanalytics" config="https://amp.analytics-debugger.com/ga4.json" data-credentials="include">
+  <button id="demoClick">Click Event Test</button>
+
+  <amp-analytics type="googleanalytics" config="https://victorvadl.github.io/ga4.json" data-credentials="include">
     <script type="application/json">
       {
-        "vars": {
-          "GA4_MEASUREMENT_ID": "G-VKYRERF7W3",
+        "vars" : {
+          "GA4_MEASUREMENT_ID": "G-THYNGSTER"
         },
-
-        "custom_pageview": {
-          "enabled": true,
-          "on": "visible"
-          "request": "ga4Event",
-          "vars": {
-              "ga4_event_name": "my_customized_page_view"
-          },
-          "extraUrlParams": {
-              "event__str_real_url": "https://www.charlesfarina.com/?origin=thyngster",
-              "event__str_param_2": "meh"
+        "extraUrlParams": {
+          "user__str_user_id": "123456",
+          "user__int_lifetime_value": "147.34"
+        },
+        "triggers": {
+          "demoClickEvent": {
+            "on": "click",
+            "request": "ga4Event",
+            "selector": "#demoClick",
+            "vars": {
+              "ga4_event_name": "click_on_demo"
+            },
+            "extraUrlParams": {
+              "event__str_click_type": "democlick",
+              "event__int_click_count": "1"
+            }
           }
-        } 
-
+        }
       }
     </script>
   </amp-analytics>
