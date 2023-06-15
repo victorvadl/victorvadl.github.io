@@ -33,20 +33,20 @@
         "vars": {
           "GA4_MEASUREMENT_ID": "G-VKYRERF7W3",
         },
-        "triggers": {
-          "custom_pageview": {
-            "enabled": true,
-            "on": "visible"
-            "request": "ga4Event",
-            "vars": {
-                "ga4_event_name": "my_customized_page_view"
-            },
-            "extraUrlParams": {
-                "event__str_real_url": "https://www.charlesfarina.com/?origin=thyngster",
-                "event__str_param_2": "meh"
-            }
+
+        "custom_pageview": {
+          "enabled": true,
+          "on": "visible"
+          "request": "ga4Event",
+          "vars": {
+              "ga4_event_name": "my_customized_page_view"
+          },
+          "extraUrlParams": {
+              "event__str_real_url": "https://www.charlesfarina.com/?origin=thyngster",
+              "event__str_param_2": "meh"
+          }
         } 
-        }
+
       }
     </script>
   </amp-analytics>
